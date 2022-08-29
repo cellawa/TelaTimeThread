@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
+import cursojava.constantes.StatusAluno;
+
 public class Aluno {
 	/* Atributos do Aluno */
 	private String nome;
@@ -165,15 +167,15 @@ public class Aluno {
 		double media = this.getMedianota();
 		if (media >= 60) {
 			if (media >= 70) {
-				return "Aluno está aprovado";
+				return StatusAluno.APROVADO;
 
 			} else {
 
-				return "Aluno está em recuperção";
+				return StatusAluno.RECUPERACAO;
 			}
 
 		} else {
-			return "Aluno está rerpovado";
+			return StatusAluno.REPROVADO;
 
 		}
 
