@@ -1,26 +1,17 @@
 package primeiraClasseJava.classes;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
+import cursojava.constantes.Pessoa;
 import cursojava.constantes.StatusAluno;
 
-public class Aluno {
+public class Aluno extends Pessoa {
 	/* Atributos do Aluno */
-	private String nome;
-	private int idade;
-	private String data;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCPF;
-	private String nomeMae;
-	private String nomePai;
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
 	public void setDisciplinas(List<Disciplina> disciplinas) {
@@ -144,7 +135,7 @@ public class Aluno {
 	public double getMedianota() {
 		double somaNotas = 0.0;
 		for (Disciplina disciplina : disciplinas) {
-			somaNotas += disciplina.getNota();
+			somaNotas += disciplina.getMediaNotas();
 
 		}
 
@@ -206,4 +197,20 @@ public class Aluno {
 		return Objects.equals(numeroCPF, other.numeroCPF);
 	}
 
+	@Override /* Identifica método sobreescrito */
+	public boolean pessoaMaiorIdade() {
+		return idade >= 21;
+	}
+	public String msgMaiorIdade () {
+		return this.pessoaMaiorIdade() ?" Oba aluno maior de iidade" : "Xii aluno menor de idade";
+		
+		
+		
+	}
+
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 1500;
+	}
 }
